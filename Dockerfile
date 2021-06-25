@@ -27,4 +27,6 @@ COPY --chown=node:node . ${WORKDIR}
 
 RUN npm run build
 
+USER node
+
 CMD [ "ng", "serve", "--host", "0.0.0.0" ]
