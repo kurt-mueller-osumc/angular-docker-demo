@@ -2,7 +2,7 @@
 
 # [Choice] Node.js version: 16, 14, 12
 ARG VARIANT="16-buster"
-FROM mcr.microsoft.com/vscode/devcontainers/typescript-node:0-${VARIANT} AS development
+FROM mcr.microsoft.com/vscode/devcontainers/typescript-node:0-${VARIANT} AS dev
 
 ENV WORKDIR /app
 
@@ -33,8 +33,8 @@ EXPOSE 4200
 
 CMD [ "ng", "serve", "--host", "0.0.0.0" ]
 
-FROM nginx:1.21 AS production
+FROM nginx:1.21 AS prod
 
-COPY --from=development /app/dist/angular-docker-demo /usr/share/nginx/html
+COPY --from=dev /app/dist/angular-docker-demo /usr/share/nginx/html
 
 EXPOSE 80
