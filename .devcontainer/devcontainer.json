@@ -18,7 +18,9 @@
   "extensions": [
     "dbaeumer.vscode-eslint",
     "ms-azuretools.vscode-docker",
-    "davidanson.vscode-markdownlint"
+    "davidanson.vscode-markdownlint",
+    "angular.ng-template",
+    "johnpapa.angular2"
   ],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
