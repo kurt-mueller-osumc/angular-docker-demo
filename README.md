@@ -1,6 +1,7 @@
-# AngularDockerDemo
+# Angular Docker Demo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0. It demonstrates how to development, build, and deploy Angular applications via a docker image.
+It makes extensive use of VS Code's Remote Container extension.
 
 ## Development server
 
