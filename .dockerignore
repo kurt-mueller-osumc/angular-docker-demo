@@ -1,0 +1,3 @@
+/node_modules
+/dist/angular-docker-demo
+!/dist/angular-docker-demo/.gitkeep
