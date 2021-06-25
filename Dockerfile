@@ -33,6 +33,7 @@ EXPOSE 4200
 
 CMD [ "ng", "serve", "--host", "0.0.0.0" ]
 
+
 FROM nginx:1.21 AS prod
 
 COPY --from=dev /app/dist/angular-docker-demo /usr/share/nginx/html
