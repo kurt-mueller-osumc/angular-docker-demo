@@ -4,6 +4,8 @@
 ARG VARIANT="16-buster"
 FROM mcr.microsoft.com/vscode/devcontainers/typescript-node:0-${VARIANT}
 
+ENV WORKDIR /app
+
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
@@ -14,3 +16,15 @@ FROM mcr.microsoft.com/vscode/devcontainers/typescript-node:0-${VARIANT}
 
 # [Optional] Uncomment if you want to install more global node packages
 RUN su node -c "npm install -g @angular/cli@12"
+
+WORKDIR ${WORKDIR}
+
+COPY --chown=node:node package.json package-lock.json ${WORKDIR}
+
+RUN npm install
+
+COPY --chown=node:node . ${WORKDIR}
+
+RUN npm run build
+
+CMD [ "ng", "serve", "--host", "0.0.0.0" ]
