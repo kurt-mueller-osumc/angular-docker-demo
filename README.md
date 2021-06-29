@@ -35,7 +35,7 @@ docker container stop <CONTAINER_ID>
 
 ## Production server
 
-Run the following commands to build the image for production use. It first builds the `dev` stage, including compiling everything into static assets, and then moves on to the `prod` stage, based off the `nginx` docker image, copying the compiled assets into the approprate directory to be served by `nginx` web server.
+Run the following commands to build the image for production use. It first builds the `dev` stage, including compiling everything into static assets, and then moves on to the `prod` stage, based off the `nginx` docker image, copying the compiled assets into the approprate directory to be served by the `nginx` web server.
 
 ```bash
 docker build . -t angular-docker-demo
