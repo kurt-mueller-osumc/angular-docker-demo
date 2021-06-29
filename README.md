@@ -43,5 +43,5 @@ Run the following commands to build the image for production use. It first build
 ```bash
 docker build . -t angular-docker-demo
 # navigate to localhost to view the page
-docker run --rm -it angular-docker-demo
+docker run --rm -it -p 80:80 angular-docker-demo
 ```
